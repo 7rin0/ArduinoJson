@@ -7,7 +7,7 @@
 #include <catch.hpp>
 
 TEST_CASE("JsonArray::operator[]") {
-  DynamicJsonDocument doc;
+  DynamicJsonDocument doc(4096);
   JsonArray array = doc.to<JsonArray>();
   array.add(0);
 
@@ -146,7 +146,7 @@ TEST_CASE("JsonArray::operator[]") {
 }
 
 TEST_CASE("JsonArrayConst::operator[]") {
-  DynamicJsonDocument doc;
+  DynamicJsonDocument doc(4096);
   JsonArray array = doc.to<JsonArray>();
   array.add(0);
 

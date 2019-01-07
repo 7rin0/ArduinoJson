@@ -6,7 +6,7 @@
 #include <catch.hpp>
 
 TEST_CASE("JsonVariant::isNull()") {
-  DynamicJsonDocument doc;
+  DynamicJsonDocument doc(4096);
   JsonVariant variant = doc.to<JsonVariant>();
 
   SECTION("return true when Undefined") {

@@ -6,7 +6,7 @@
 #include <catch.hpp>
 
 void check(std::string originalJson) {
-  DynamicJsonDocument doc;
+  DynamicJsonDocument doc(4096);
 
   std::string prettyJson;
   deserializeJson(doc, originalJson);

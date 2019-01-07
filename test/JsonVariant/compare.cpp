@@ -9,7 +9,7 @@ static const char* null = 0;
 
 template <typename T>
 void checkEquals(T a, T b) {
-  DynamicJsonDocument doc;
+  DynamicJsonDocument doc(4096);
   JsonVariant variant = doc.to<JsonVariant>();
   variant.set(a);
 
@@ -30,7 +30,7 @@ void checkEquals(T a, T b) {
 
 template <typename T>
 void checkGreater(T a, T b) {
-  DynamicJsonDocument doc;
+  DynamicJsonDocument doc(4096);
   JsonVariant variant = doc.to<JsonVariant>();
   variant.set(a);
 
@@ -47,7 +47,7 @@ void checkGreater(T a, T b) {
 
 template <typename T>
 void checkLower(T a, T b) {
-  DynamicJsonDocument doc;
+  DynamicJsonDocument doc(4096);
   JsonVariant variant = doc.to<JsonVariant>();
   variant.set(a);
 
@@ -111,7 +111,7 @@ TEST_CASE("JsonVariant comparisons") {
   }
 
   SECTION("null") {
-    DynamicJsonDocument doc;
+    DynamicJsonDocument doc(4096);
     JsonVariant variant = doc.to<JsonVariant>();
     variant.set(null);
 
@@ -126,7 +126,7 @@ TEST_CASE("JsonVariant comparisons") {
   }
 
   SECTION("StringLiteral") {
-    DynamicJsonDocument doc;
+    DynamicJsonDocument doc(4096);
     deserializeJson(doc, "\"hello\"");
     JsonVariant variant = doc.as<JsonVariant>();
 
@@ -153,7 +153,7 @@ TEST_CASE("JsonVariant comparisons") {
   }
 
   SECTION("String") {
-    DynamicJsonDocument doc;
+    DynamicJsonDocument doc(4096);
     JsonVariant variant = doc.to<JsonVariant>();
     variant.set("hello");
 
@@ -185,7 +185,7 @@ TEST_CASE("JsonVariant comparisons") {
     char vla[i];
     strcpy(vla, "hello");
 
-    DynamicJsonDocument doc;
+    DynamicJsonDocument doc(4096);
     JsonVariant variant = doc.to<JsonVariant>();
     variant.set("hello");
 
@@ -200,7 +200,7 @@ TEST_CASE("JsonVariant comparisons") {
     char vla[i];
     strcpy(vla, "hello");
 
-    DynamicJsonDocument doc;
+    DynamicJsonDocument doc(4096);
     JsonVariant variant = doc.to<JsonVariant>();
     variant.set("world");
 

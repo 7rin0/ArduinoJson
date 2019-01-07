@@ -6,7 +6,7 @@
 #include <catch.hpp>
 
 TEST_CASE("DynamicJsonDocument") {
-  DynamicJsonDocument doc;
+  DynamicJsonDocument doc(4096);
 
   SECTION("serializeJson()") {
     JsonObject obj = doc.to<JsonObject>();
