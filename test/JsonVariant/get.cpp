@@ -24,7 +24,7 @@ void checkReference(T &expected) {
 
 template <typename T>
 void checkNumericType() {
-  DynamicJsonDocument docMin, docMax;
+  DynamicJsonDocument docMin(4096), docMax(4096);
   JsonVariant variantMin = docMin.to<JsonVariant>();
   JsonVariant variantMax = docMax.to<JsonVariant>();
 

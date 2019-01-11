@@ -93,8 +93,8 @@ TEST_CASE("serializeJson(JsonObject)") {
   }
 
   SECTION("ThreeNestedArrays") {
-    DynamicJsonDocument b;
-    DynamicJsonDocument c;
+    DynamicJsonDocument b(4096);
+    DynamicJsonDocument c(4096);
 
     obj.createNestedArray("a");
     obj["b"] = b.to<JsonArray>();
@@ -104,8 +104,8 @@ TEST_CASE("serializeJson(JsonObject)") {
   }
 
   SECTION("ThreeNestedObjects") {
-    DynamicJsonDocument b;
-    DynamicJsonDocument c;
+    DynamicJsonDocument b(4096);
+    DynamicJsonDocument c(4096);
 
     obj.createNestedObject("a");
     obj["b"] = b.to<JsonObject>();

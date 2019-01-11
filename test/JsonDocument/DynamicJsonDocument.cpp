@@ -136,7 +136,7 @@ TEST_CASE("DynamicJsonDocument copies") {
   }
 
   SECTION("Assign from StaticJsonDocument") {
-    DynamicJsonDocument ddoc;
+    DynamicJsonDocument ddoc(4096);
     ddoc.to<JsonVariant>().set(666);
 
     StaticJsonDocument<200> sdoc;

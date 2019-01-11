@@ -20,7 +20,7 @@ TEST_CASE("JsonVariant::isNull()") {
   }
 
   SECTION("return false when EmptyArray") {
-    DynamicJsonDocument doc2;
+    DynamicJsonDocument doc2(4096);
     JsonArray array = doc2.to<JsonArray>();
 
     variant.set(array);
@@ -28,7 +28,7 @@ TEST_CASE("JsonVariant::isNull()") {
   }
 
   SECTION("return false when EmptyObject") {
-    DynamicJsonDocument doc2;
+    DynamicJsonDocument doc2(4096);
     JsonObject obj = doc2.to<JsonObject>();
 
     variant.set(obj);
